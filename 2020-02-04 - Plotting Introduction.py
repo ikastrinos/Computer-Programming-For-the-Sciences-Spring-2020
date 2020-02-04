@@ -117,7 +117,7 @@ ylabel('position [m]')
 # * figure too small
 # * I like grids over no-grids
 
-# In[5]:
+# In[6]:
 
 
 from matplotlib import rcParams
@@ -138,10 +138,12 @@ rcParams['figure.figsize']=(12,8)
 rcParams['axes.grid']=True
 
 
-# In[6]:
+# In[7]:
 
 
-mydefaults()
+plot(t_list,y_list)
+xlabel('time [s]')
+ylabel('position [m]')
 
 
 # In[ ]:
