@@ -217,6 +217,34 @@ for i in range(number_of_times_to_repeat):
 plot(t_list,n_list)
 
 
+# In[47]:
+
+
+print("here")
+No=2
+
+n=1000
+t=0
+a=0.5
+dt=0.0001
+K=200
+
+maximum_time=20
+number_of_times_to_repeat=int(maximum_time/dt)
+
+n_list=[n]
+t_list=[t]
+for i in range(number_of_times_to_repeat):
+    dn=(a*n*(1-n/K))*dt
+    n=n+dn
+    t=t+dt
+    
+    n_list.append(n)
+    t_list.append(t)
+    
+plot(t_list,n_list)
+
+
 # # Another system
 # 
 # $$
@@ -226,10 +254,13 @@ plot(t_list,n_list)
 # $$
 # \frac{dv}{dt} = r\cdot t
 # $$
+# 
+# * but
+# * bullets
+# * can be much
+# * easier
 
 # In[38]:
-
-
 
 
 # initial values of variables
@@ -266,16 +297,20 @@ for i in range(number_of_times_to_repeat):
     
 
 
-# In[39]:
+# In[44]:
 
 
 plot(t_list,x_list)
+xlabel('time')
+ylabel('x')
 
 
-# In[40]:
+# In[46]:
 
 
 plot(t_list,v_list)
+xlabel('time')
+ylabel('v')
 
 
 # In[ ]:
