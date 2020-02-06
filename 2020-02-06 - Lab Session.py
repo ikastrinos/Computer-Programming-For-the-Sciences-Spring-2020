@@ -186,6 +186,154 @@ t
 plot(t,5*t+3)
 
 
+# In[26]:
+
+
+list(range(1,4))
+
+
+# In[27]:
+
+
+t=3
+exp(t/2)
+
+
+# In[28]:
+
+
+e**(t/2)
+
+
+# ## Comparing to an analytical solution
+# 
+# Taken from 2020-01-30 Simulation notebook
+# 
+# $$
+# \frac{dx}{dt} = v
+# $$
+# 
+# $$
+# \frac{dv}{dt} = r\cdot t
+# $$
+# 
+
+# In[29]:
+
+
+# initial values of variables
+t=0
+x=0
+v=0
+
+# parameters
+r=8
+
+# deal with time
+dt=0.0001
+maximum_time=20
+number_of_times_to_repeat=int(maximum_time/dt)
+
+# initial lists for variables
+x_list=[x]
+v_list=[v]
+t_list=[t]
+for i in range(number_of_times_to_repeat):
+    # how the variables change
+    dx=v*dt
+    dv=r*t*dt
+    
+    # update the variable values, and time
+    x=x+dx
+    v=v+dv
+    t=t+dt
+    
+    # store the results in a list
+    x_list.append(x)
+    v_list.append(v)
+    t_list.append(t)
+    
+
+
+# In[30]:
+
+
+x=array(x_list)
+v=array(v_list)
+t=array(t_list)
+
+
+# In[42]:
+
+
+y_soln=t*sin(t)
+
+
+# In[ ]:
+
+
+
+
+
+# In[33]:
+
+
+plot(t,x)
+
+x_soln=1/6*r*t**3
+plot(t,x_soln,'--')
+
+
+# In[34]:
+
+
+x=12
+
+
+# In[35]:
+
+
+x%2
+
+
+# In[36]:
+
+
+x%7
+
+
+# In[45]:
+
+
+x=2
+count=0
+
+if x%2==0:
+    print("divisible by two!")
+    print("another")
+    count+=1
+else:
+    print("not.")
+
+
+# In[39]:
+
+
+a=array([2,3,5,7,12,17])
+
+
+# In[40]:
+
+
+a
+
+
+# In[41]:
+
+
+a%2
+
+
 # In[ ]:
 
 
