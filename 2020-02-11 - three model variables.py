@@ -48,14 +48,14 @@ I=1
 R=0
 
 # parameters
-β=.01
-γ=0.001
+β=1
+γ=0.1
 μ=0
 
 
 # deal with time
 dt=0.0001
-maximum_time=2
+maximum_time=60
 number_of_times_to_repeat=int(maximum_time/dt)
 
 # initial lists for variables
@@ -68,9 +68,9 @@ for i in range(number_of_times_to_repeat):
     # how the variables change
     N=S+I+R
     
-    dS=-β*S*I/N -μ*S
-    dI=β*S*I/N -γ*I -μ*I
-    dR=γ*I -μ*R
+    dS=(-β*S*I/N -μ*S)*dt
+    dI=(β*S*I/N -γ*I -μ*I)*dt
+    dR=(γ*I -μ*R)*dt
     
     # update the variable values, and time
     S=S+dS
