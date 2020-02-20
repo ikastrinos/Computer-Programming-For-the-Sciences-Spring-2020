@@ -126,12 +126,12 @@ ylabel('velocity')
 xlabel('time')
 
 
-# In[9]:
+# In[14]:
 
 
 # parameters
 
-k=2
+k=20
 m=1
 
 # initial values
@@ -142,7 +142,7 @@ t=0
 
 # time parameters
 dt=0.001
-max_time=10
+max_time=100
 number_of_steps=int(max_time/dt)
 
 S=Storage()
@@ -168,7 +168,7 @@ t,x,v=S.arrays()
 
 
 
-# In[11]:
+# In[17]:
 
 
 subplot(2,1,1)
@@ -176,11 +176,149 @@ plot(t,x)
 ylabel('position')
 
 subplot(2,1,2)
-plot(t,v)
-
-plot(t,2*v)
+plot(t,v,'r-')
 ylabel('velocity')
 xlabel('time')
+
+
+# In[18]:
+
+
+# parameters
+
+k=20
+m=1
+
+# initial values
+
+variables=array([0,3])
+# x=0
+# v=3
+t=0
+
+# time parameters
+dt=0.001
+max_time=100
+number_of_steps=int(max_time/dt)
+
+S=Storage()
+
+for i in range(number_of_steps):
+    
+    # changes
+    x,v=variables
+    change_in_variables=array([v,-k*x/m])
+#     dx=(v)*dt
+#     dv=(-k*x/m)*dt
+    
+    #update values
+    t=t+dt
+    variables=variables+change_in_variables*dt
+#     x=x+dx
+#     v=v+dv
+    
+    #saving the values
+    x,v=variables
+    S+=t,x,v
+    
+    
+t,x,v=S.arrays()    
+
+
+
+
+
+# In[19]:
+
+
+subplot(2,1,1)
+plot(t,x)
+ylabel('position')
+
+subplot(2,1,2)
+plot(t,v,'r-')
+ylabel('velocity')
+xlabel('time')
+
+
+# In[22]:
+
+
+pip install "git+git://github.com/bblais/pyndamics" --upgrade
+
+
+# In[23]:
+
+
+from pyndamics import Simulation
+
+
+# In[28]:
+
+
+sim=Simulation()
+
+sim.add(" x' = v ",0,plot=True)
+sim.add(" v' = -k*x/m ",3,plot=True)
+
+sim.params(k=2,m=1)
+sim.run(100)
+
+
+# # infinite integers
+
+# In[29]:
+
+
+def factorial(N):
+    
+    value=1
+    for i in range(1,N+1):
+        value=value*i
+        
+    return value
+
+
+# In[30]:
+
+
+factorial(5)
+
+
+# In[31]:
+
+
+factorial(70)
+
+
+# In[32]:
+
+
+factorial(700)
+
+
+# In[33]:
+
+
+factorial(7000)
+
+
+# In[34]:
+
+
+def factorial(N):
+    
+    value=1.0
+    for i in range(1,N+1):
+        value=value*i
+        
+    return value
+
+
+# In[45]:
+
+
+factorial(170)
 
 
 # In[ ]:
