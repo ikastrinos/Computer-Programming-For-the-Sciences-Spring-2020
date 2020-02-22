@@ -321,6 +321,29 @@ def factorial(N):
 factorial(170)
 
 
+# In[57]:
+
+
+def beta(h,N,θ):
+    return factorial(N+1)/factorial(h)/factorial(N-h)*θ**h*(1-θ)**(N-h)
+
+
+# In[58]:
+
+
+beta(3,12,0.5)
+
+
+# In[61]:
+
+
+θ=linspace(0,1,100)
+dθ=θ[1]-θ[0]
+p=beta(3,12,θ)
+plot(θ,p)
+title(sum(p*dθ))
+
+
 # In[ ]:
 
 
