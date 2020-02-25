@@ -10,7 +10,7 @@
 # In[23]:
 
 
-def get_course_github():
+def get_course_github(name='Computer-Programming-For-the-Sciences-Spring-2020'):
     import os,sys
     if not os.path.exists(name):
         get_ipython().system('git clone https://github.com/bblais/Computer-Programming-For-the-Sciences-Spring-2020 Computer-Programming-For-the-Sciences-Spring-2020')
@@ -39,6 +39,14 @@ pip install "git+git://github.com/bblais/pyndamics" --upgrade
 
 
 pip install -U emcee
+
+
+# # SIE
+
+# In[3]:
+
+
+pip install "git+git://github.com/bblais/Statistical-Inference-for-Everyone#egg=sie&subdirectory=python/sie" --upgrade
 
 
 # In[ ]:
