@@ -31,13 +31,13 @@ def fact(N):
     return val
 
 
-# In[6]:
+# In[5]:
 
 
 fact(5)
 
 
-# In[7]:
+# In[6]:
 
 
 D=3
@@ -45,7 +45,7 @@ U=9
 N=D+U
 
 
-# In[10]:
+# In[7]:
 
 
 p=fact(N)/fact(D)/fact(U)*θ**(D)*(1-θ)**(N-D)
@@ -53,32 +53,32 @@ p=fact(N)/fact(D)/fact(U)*θ**(D)*(1-θ)**(N-D)
 p=fact(N)/(fact(D)*fact(U))*θ**(D)*(1-θ)**(N-D)
 
 
-# In[11]:
+# In[8]:
 
 
 p
 
 
-# In[12]:
+# In[9]:
 
 
 sum(p)
 
 
-# In[13]:
+# In[10]:
 
 
 K=sum(p)
 p=p/K
 
 
-# In[14]:
+# In[11]:
 
 
 sum(p)
 
 
-# In[17]:
+# In[12]:
 
 
 figure(figsize=(8,4))
@@ -86,7 +86,7 @@ plot(θ,p,'-o')
 xlabel('θ')
 
 
-# In[19]:
+# In[13]:
 
 
 D,U=0,0
@@ -98,7 +98,7 @@ plot(θ,p,'-o')
 xlabel('θ')
 
 
-# In[24]:
+# In[14]:
 
 
 data=[(0,0),(0,1),(0,2),(1,2)]
@@ -114,7 +114,7 @@ for D,U in data:
 legend()
 
 
-# In[25]:
+# In[15]:
 
 
 data=[(1,2)]
@@ -130,33 +130,33 @@ for D,U in data:
 legend()
 
 
-# In[26]:
+# In[16]:
 
 
 p
 
 
-# In[30]:
+# In[17]:
 
 
 p[(θ>.1) & (θ<0.8)].sum()
 
 
-# In[34]:
+# In[18]:
 
 
 θ=linspace(0,1,53)
 θ
 
 
-# In[35]:
+# In[19]:
 
 
 dθ=θ[1]-θ[0]
 dθ
 
 
-# In[36]:
+# In[20]:
 
 
 data=[(1,2)]
@@ -173,7 +173,7 @@ for D,U in data:
 legend()
 
 
-# In[37]:
+# In[21]:
 
 
 θ=linspace(0,1,101)
@@ -192,13 +192,13 @@ for D,U in data:
 legend()
 
 
-# In[38]:
+# In[22]:
 
 
 (p[(θ<=.5)]*dθ).sum()
 
 
-# In[39]:
+# In[23]:
 
 
 θ=linspace(0,1,101)
@@ -217,18 +217,18 @@ for D,U in data:
 legend()
 
 
-# In[40]:
+# In[24]:
 
 
 (p[(θ<=.5)]*dθ).sum()
 
 
-# In[41]:
+# In[27]:
 
 
 θ=linspace(0,1,101)
 dθ=θ[1]-θ[0]
-data=[(1,2),(300,900)]
+data=[(1,2),(60,180)]
 figure(figsize=(8,4))
 
 for D,U in data:
