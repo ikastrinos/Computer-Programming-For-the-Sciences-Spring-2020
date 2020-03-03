@@ -7,7 +7,7 @@
 
 # # Course GitHub
 
-# In[23]:
+# In[5]:
 
 
 def get_course_github(name='Computer-Programming-For-the-Sciences-Spring-2020'):
@@ -19,7 +19,13 @@ def get_course_github(name='Computer-Programming-For-the-Sciences-Spring-2020'):
         
 
 
-# In[22]:
+# In[ ]:
+
+
+
+
+
+# In[6]:
 
 
 get_course_github()
@@ -27,7 +33,7 @@ get_course_github()
 
 # # Pyndamics
 
-# In[3]:
+# In[7]:
 
 
 pip install "git+git://github.com/bblais/pyndamics" --upgrade
@@ -43,7 +49,7 @@ pip install -U emcee
 
 # # SIE
 
-# In[3]:
+# In[1]:
 
 
 pip install "git+git://github.com/bblais/Statistical-Inference-for-Everyone#egg=sie&subdirectory=python/sie" --upgrade
