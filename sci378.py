@@ -1,7 +1,13 @@
-print("Version 0.0.1")
+print("Version 0.0.2")
 
 from matplotlib import rcParams
 from numpy import array
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from statsmodels.formula.api import ols
+
 
 fontsize=20
 
@@ -55,19 +61,17 @@ class Storage(object):
         return vstack(self.arrays())
 
     
-    class Struct(dict):
-    
-    def __getattr__(self,name):
-        
-        try:
-            val=self[name]
-        except KeyError:
-            val=super(Struct,self).__getattribute__(name)
-            
-        return val
-    
-    def __setattr__(self,name,val):
-        
-        self[name]=val
 
     
+def ols_result_random_samples(results,N=1000):
+    from copy import deepcopy
+    results2=deepcopy(results)
+    
+    r=np.random.multivariate_normal(np.array(results.params),
+                                2*results.cov_HC0,N)
+    
+    for p in r:
+        results2.params[:]=p
+            
+        yield results2
+
