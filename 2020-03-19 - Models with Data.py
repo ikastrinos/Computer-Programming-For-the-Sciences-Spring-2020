@@ -108,6 +108,26 @@ ylabel('I')
 model.plot_distributions()
 
 
+# Station data from https://data.giss.nasa.gov/gistemp/station_data_v4_globe/
+
+# In[31]:
+
+
+data=pd.read_csv('data/berkeley.csv')
+data.head()
+
+
+# In[37]:
+
+
+t=array(data['YEAR'])
+y=array(data['metANN'])
+y[y==999.90]=np.nan
+
+y=(y+40)*9/5-40
+plot(t,y,'o-')
+
+
 # In[ ]:
 
 
