@@ -24,6 +24,23 @@ rcParams['figure.figsize']=(12,8)
 
 rcParams['axes.grid']=True
 
+class Struct(dict):
+    
+    def __getattr__(self,name):
+        
+        try:
+            val=self[name]
+        except KeyError:
+            val=super(Struct,self).__getattribute__(name)
+            
+        return val
+    
+    def __setattr__(self,name,val):
+        
+        self[name]=val
+
+
+
 class Storage(object):
     def __init__(self):
         self.data=[]
